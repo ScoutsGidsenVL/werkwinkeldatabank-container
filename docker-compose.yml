@@ -1,0 +1,33 @@
+---
+version: '3.3'
+services:
+  api-scouts-wwdb:
+    container_name: scouts-wwdb-api
+    stdin_open: true
+    build:
+      context: .
+      dockerfile: docker-contexts/django/Dockerfile
+    volumes:
+      - "./api:/wwdb-api"
+    depends_on:
+      - postgres-scouts-wwdb
+    ports:
+      - "8011:8000"
+
+  postgres-scouts-wwdb:
+    container_name: scouts-wwdb-postgres
+    image: postgres
+    environment:
+      - POSTGRES_DB=scouts-wwdb
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=ROOT
+    volumes:
+      - './.docker/data/postgres:/var/lib/postgresql/data'
+    ports:
+      - "5432:5432"
+
+  mailcatcher-scouts-wwdb:
+    container_name: scouts-wwdb-mailcatcher
+    image: nexus.inuits.io:5000/inuits/mailcatcher
+    ports:
+      - "8021:8080"
