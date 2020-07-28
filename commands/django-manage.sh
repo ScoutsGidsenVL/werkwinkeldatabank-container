@@ -7,4 +7,4 @@ then
     exit 1
 fi
 
-docker exec -it scouts-wwdb-api sh -c "python manage.py $command"
+docker exec -it scouts-wwdb-api sh -c "python scouts_wwdb_api/manage.py $command"
