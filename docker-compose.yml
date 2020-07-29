@@ -22,7 +22,7 @@ services:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=ROOT
     volumes:
-      - './.docker/data/postgres:/var/lib/postgresql/data'
+      - ./.docker/data/postgres:/var/lib/postgresql/data:z
     ports:
       - "5432:5432"
 
