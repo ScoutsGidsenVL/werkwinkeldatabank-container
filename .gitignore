@@ -2,3 +2,5 @@
 .idea
 .docker
 api
+frontend
+docker-contexts/minio/data/*
