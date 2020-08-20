@@ -31,3 +31,15 @@ services:
     image: nexus.inuits.io:5000/inuits/mailcatcher
     ports:
       - "8021:8080"
+  
+  node-scouts-wwdb-frontend:
+    container_name: scouts-wwdb-frontend
+    build:
+      context: ./docker-contexts/node
+    stdin_open: true
+    volumes:
+      - ./frontend:/scouts-wwdb-frontend
+      - ./docker-contexts/node/.npmrc:/root/.npmrc
+      - ./docker-contexts/node/config.json:/scouts-wwdb-frontend/public/cfg/config.json
+    ports:
+      - "8040:8080"
