@@ -3,4 +3,5 @@
 .docker
 api
 frontend
+drupal8-test
 docker-contexts/minio/data/*
