@@ -1,4 +1,4 @@
-# Hpc resource reservation docker setup
+# Wwdb docker setup
 
 ## Git
 For this project we dont use git submodules like in some others but instead you can get all required sub repositories by running the following script
@@ -38,10 +38,10 @@ Then run the setup script to execute some commands to keep api up to date (poetr
 </pre>
 
 ## Ports
-- Hpc resource reservation: localhost:8011
+- Wwdb reservation: localhost:8011
 - Mailcatcher: localhost:8020
 
-## Hpc resource reservation
+## Wwdb reservation
 
 ### Poetry
 This django project uses poetry for it's package management. See https://python-poetry.org/
