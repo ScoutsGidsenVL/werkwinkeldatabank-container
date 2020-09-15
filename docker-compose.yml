@@ -9,6 +9,7 @@ services:
       dockerfile: docker-contexts/django/Dockerfile
     volumes:
       - "./api:/wwdb-api"
+      - ./docker-contexts/django/.env:/wwdb-api/.env
     depends_on:
       - postgres-scouts-wwdb
     ports:
@@ -41,5 +42,6 @@ services:
       - ./frontend:/scouts-wwdb-frontend
       - ./docker-contexts/node/.npmrc:/root/.npmrc
       - ./docker-contexts/node/config.json:/scouts-wwdb-frontend/public/cfg/config.json
+      - ./docker-contexts/node/.env:/scouts-wwdb-frontend/.env
     ports:
       - "8040:8080"
