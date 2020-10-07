@@ -5,3 +5,4 @@ api
 frontend
 drupal8-test
 docker-contexts/minio/data/*
+docker-contexts/django/packages
