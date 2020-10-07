@@ -4,6 +4,8 @@ services:
   api-scouts-wwdb:
     container_name: scouts-wwdb-api
     stdin_open: true
+    links:
+      - minio-scouts-wwdb:minio
     build:
       context: .
       dockerfile: docker-contexts/django/Dockerfile
@@ -12,6 +14,7 @@ services:
       - ./docker-contexts/django/.env:/wwdb-api/.env
     depends_on:
       - postgres-scouts-wwdb
+      - minio-scouts-wwdb
     ports:
       - "8011:8000"
 
@@ -33,6 +36,21 @@ services:
     ports:
       - "8021:8080"
 
+  minio-scouts-wwdb:
+    container_name: scouts-wwdb-minio
+    image: minio/minio
+    environment:
+      MINIO_ACCESS_KEY: minio
+      MINIO_SECRET_KEY: minio_secret
+    volumes:
+      - ./docker-contexts/minio/data:/data
+    entrypoint: sh
+    command: -c 'mkdir -p /data/scouts-wwdb && /usr/bin/minio server /data'
+    ports:
+      - "9001:9000"
+    expose:
+      - "9000"
+  
   node-scouts-wwdb-frontend:
     container_name: scouts-wwdb-frontend
     build:
