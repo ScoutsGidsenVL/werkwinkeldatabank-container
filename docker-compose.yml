@@ -64,15 +64,21 @@ services:
     ports:
       - "8040:8080"
 
-  drupal:
-    stdin_open: true
-    tty: true
-    image: "ricardoamaro/drupal8"
-    build:
-      context: .
-      dockerfile: ./docker-contexts/drupal/Dockerfile
+  mailcatcher-scouts-wwdb:
+    container_name: scouts-wwdb-mailcatcher
+    image: nexus.inuits.io:5000/inuits/mailcatcher
     ports:
-      - 8077:8077
-    volumes:
-      - ./drupal8-test/local/data:/var/lib/mysql
-      - ./drupal8-test/local:/var/www/html
+      - "8020:8080" 
+
+  # drupal:
+  #   stdin_open: true
+  #   tty: true
+  #   image: "ricardoamaro/drupal8"
+  #   build:
+  #     context: .
+  #     dockerfile: ./docker-contexts/drupal/Dockerfile
+  #   ports:
+  #     - 8077:8077
+  #   volumes:
+  #     - ./drupal8-test/local/data:/var/lib/mysql
+  #     - ./drupal8-test/local:/var/www/html
