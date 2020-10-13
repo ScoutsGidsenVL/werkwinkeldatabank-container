@@ -64,6 +64,12 @@ services:
     ports:
       - "8040:8080"
 
+  mailcatcher-scouts-wwdb:
+    container_name: scouts-wwdb-mailcatcher
+    image: nexus.inuits.io:5000/inuits/mailcatcher
+    ports:
+      - "8020:8080" 
+
   # drupal:
   #   stdin_open: true
   #   tty: true
