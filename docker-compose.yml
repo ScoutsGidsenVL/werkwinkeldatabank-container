@@ -20,7 +20,7 @@ services:
 
   postgres-scouts-wwdb:
     container_name: scouts-wwdb-postgres
-    image: postgres
+    image: postgres:12
     environment:
       - POSTGRES_DB=scouts-wwdb
       - POSTGRES_USER=root
@@ -64,15 +64,15 @@ services:
     ports:
       - "8040:8080"
 
-  drupal:
-    stdin_open: true
-    tty: true
-    image: "ricardoamaro/drupal8"
-    build:
-      context: .
-      dockerfile: ./docker-contexts/drupal/Dockerfile
-    ports:
-      - 8077:8077
-    volumes:
-      - ./drupal8-test/local/data:/var/lib/mysql
-      - ./drupal8-test/local:/var/www/html
+  # drupal:
+  #   stdin_open: true
+  #   tty: true
+  #   image: "ricardoamaro/drupal8"
+  #   build:
+  #     context: .
+  #     dockerfile: ./docker-contexts/drupal/Dockerfile
+  #   ports:
+  #     - 8077:8077
+  #   volumes:
+  #     - ./drupal8-test/local/data:/var/lib/mysql
+  #     - ./drupal8-test/local:/var/www/html
