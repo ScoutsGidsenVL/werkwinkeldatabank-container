@@ -7,6 +7,9 @@ node_modules
 .npmrc
 .docker
 __pycache__
+docker-contexts/minio
+drupal8-test/
+
 
 ################################
 # Python: local .env files     #
