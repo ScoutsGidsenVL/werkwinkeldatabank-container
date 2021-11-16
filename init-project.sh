@@ -1,6 +1,7 @@
 git clone ssh://git@gitlab.inuits.io:2224/customers/scouts/werkwinkeldatabank/scouts-wwdb-api.git api
 git clone ssh://git@gitlab.inuits.io:2224/customers/scouts/werkwinkeldatabank/scouts-wwdb-frontend.git frontend
 git clone https://github.com/ricardoamaro/drupal8-docker-app.git drupal8-test
+git clone git@github.com:inuits/inuits-vuejs-oidc.git
 # DRUPAL
 # To get drupal working: After the clone cd drupal8-test
 # ./drupal8_local.sh - This will init the project, drupal modules, database etc but will also start the local server which you can cancel once it's finished

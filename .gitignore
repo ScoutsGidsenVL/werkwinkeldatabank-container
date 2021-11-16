@@ -43,6 +43,7 @@ public/config.json
 ################################
 /api
 /frontend
+/inuits-vuejs-oidc
 
 ################################
 # Eclipse Specific GitIgnore   #
