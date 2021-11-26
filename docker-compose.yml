@@ -61,14 +61,15 @@ services:
       - ./docker-contexts/node/.npmrc:/root/.npmrc
       - ./docker-contexts/node/config.json:/scouts-wwdb-frontend/public/config.json
       - ./docker-contexts/node/.env:/scouts-wwdb-frontend/.env
+      - ./inuits-vuejs-oidc:/scouts-wwdb-frontend/inuits-vuejs-oidc
     ports:
       - "8040:8080"
 
-  mailcatcher-scouts-wwdb:
-    container_name: scouts-wwdb-mailcatcher
-    image: nexus.inuits.io:5000/inuits/mailcatcher
-    ports:
-      - "8020:8080" 
+  # mailcatcher-scouts-wwdb:
+  #   container_name: scouts-wwdb-mailcatcher
+  #   image: nexus.inuits.io:5000/inuits/mailcatcher
+  #   ports:
+  #     - "8020:8080" 
 
   # drupal:
   #   stdin_open: true
